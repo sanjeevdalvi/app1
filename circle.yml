@@ -5,5 +5,5 @@ machine:
 deploy:
 
          run: 
-         command: aws s3 sync app1 s3://meply --delete
+         command: aws s3 sync ~/sanjeevdalvi/app1 s3://meply --delete
     
