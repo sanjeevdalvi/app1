@@ -1,4 +1,10 @@
-  - run:
+  
+deploy:
+    docker:
+      - image: my-image
+    working_directory: ~/sanjeevdalvi
+    steps:
+    - run:
           name: Install dependencies
           working_directory: /
           command: |
@@ -9,13 +15,8 @@
             pip install awscli --upgrade --user
 
 
-
-deploy:
-    docker:
-      - image: my-image
-    working_directory: ~/sanjeevdalvi
-    steps:
-      - run:
+ 
+    - run:
           name: Deploy to S3 if tests pass and branch is Master
           command: 
             apt-get install awscli
