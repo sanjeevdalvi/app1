@@ -6,5 +6,6 @@ deployment:
 
   stage:
     branch: master
-         commands: aws s3 sync app1 s3://meply --delete
+         commands: 
+         - aws s3 sync app1 s3://meply --delete
     
