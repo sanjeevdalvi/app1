@@ -6,7 +6,7 @@ deploy:
     steps:
     - run:
           name: Install dependencies
-          working_directory: /
+          working_directory: ~/sanjeevdalvi
           command: |
             apt-get -y -qq update
             apt-get -y -qq install python3.4-dev
@@ -19,7 +19,6 @@ deploy:
     - run:
           name: Deploy to S3 if tests pass and branch is Master
           command: 
-            apt-get install awscli
             aws s3 sync ~/sanjeevdalvi/app1 s3://meply --delete
     
 
