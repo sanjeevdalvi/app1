@@ -1,7 +1,7 @@
 deploy:
     docker:
       - image: my-image
-    working_directory: /
+    working_directory: ~/sanjeevdalvi
     steps:
       - run:
           name: Deploy to S3 if tests pass and branch is Master
