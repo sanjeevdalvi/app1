@@ -2,12 +2,10 @@ machine:
   node:
     version: 6.0.0
 
-deploy:
-    docker:
-      - image: my-image
-    working_directory: / 
-    steps:
-      - run:
+deployment:
+
+  stage:
+    branch: master
           name: Deploy to S3 if tests pass and branch is Master
-          command: aws s3 sync app1 s3://meply/ --delete
+          command: aws s3 sync app1 s3://meply --delete
     
