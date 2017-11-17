@@ -3,8 +3,7 @@ machine:
     version: 6.0.0
 
 deploy:
-  stage:
-    branch: master
+
          run: 
          command: aws s3 sync app1 s3://meply --delete
     
