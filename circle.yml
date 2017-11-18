@@ -1,11 +1,11 @@
   
 deploy:
    
-    working_directory: ~/sanjeevdalvi
+    working_directory: ~/app1
     steps:
     - run:
           name: Install dependencies
-          working_directory: ~/sanjeevdalvi
+          working_directory: ~/app1
           command: |
             apt-get -y -qq update
             apt-get -y -qq install python3.4-dev
@@ -23,7 +23,7 @@ deploy:
             curl -O https://bootstrap.pypa.io/get-pip.py
             python3.4 get-pip.py --user
             pip install awscli --upgrade --user
-            aws s3 sync ~/sanjeevdalvi/app1 s3://meply --delete
+            aws s3 sync ~/app1 s3://meply --delete
     
 
 workflows:
