@@ -10,4 +10,5 @@ jobs:
        - run: npm install 
        - run: npm run build
        - run: echo "hello world"
-       
+       - run: aws s3 sync ~/app1/build s3://staging-area1  --delete 
+           
