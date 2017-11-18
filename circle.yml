@@ -15,5 +15,5 @@ jobs:
           command: |
             curl -O https://bootstrap.pypa.io/get-pip.py
             python get-pip.py --user
-            python -m pip install awscli --upgrade 
+            sudo pip install awscli --upgrade --user
             aws s3 sync ~/app1/build s3://staging-area1  --delete  
