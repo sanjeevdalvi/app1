@@ -2,15 +2,12 @@
 version: 2
 jobs:
   build-job:
-    docker:
-      - image: my-image
-    working_directory: ~/app1 
+
+  working_directory: ~/app1 
     steps:
       - run: npm run build
             
   deploy-job:
-    docker:
-      - image: my-image
     working_directory: ~/app1  
     steps:
     - run:
