@@ -15,8 +15,11 @@ jobs:
       - image: circleci/node:6
     steps:
        - checkout
-       - run: npm install 
-       - run: npm run build 
+       - run:
+          name: Deploy to S3 if tests pass and branch is Master
+          command: |
+            sudo apt-get -y -qq install awscli
+            aws s3 sync build s3://staging-area-1  --delete 
        
 workflows:
   version: 2
