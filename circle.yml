@@ -1,18 +1,17 @@
 version: 2
+working_directory: ~/app1 
 jobs:
   build-job:
     docker:
     image: circleci/node:6
-  working_directory: ~/app1 
     steps:
        - checkout
        - run: npm install 
        - run: npm run build
-            
+          
   deploy-job:
    docker:
     image: circleci/node:6
-     working_directory: ~/app1  
     steps:
      - run:
           name: Deploy to S3 if tests pass and branch is Master
