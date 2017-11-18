@@ -1,3 +1,4 @@
+
 version: 2
 working_directory: ~/app1 
 jobs:
@@ -10,11 +11,11 @@ jobs:
        - run: npm run build  
        
   deploy-job:
-   docker:
+    docker:
     image: circleci/node:6
     steps:
        - checkout
-       - echo "aaa"
+       - run: npm install 
        - run: npm run build 
        
 workflows:
