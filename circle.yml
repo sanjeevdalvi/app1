@@ -1,6 +1,7 @@
   
 deploy:
-   
+    docker:
+         image: circleci/node:7.10.1
     working_directory: ~/app1
     steps:
     - run:
