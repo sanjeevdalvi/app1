@@ -2,10 +2,11 @@
 version: 2
 jobs:
   build-job:
-
   working_directory: ~/app1 
     steps:
-      - run: npm run build
+      - run:
+            name: build process
+            command: npm run build
             
   deploy-job:
     working_directory: ~/app1  
