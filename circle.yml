@@ -1,21 +1,8 @@
   
 deploy:
-    docker:
-         image: circleci/node:7.10.1
-    working_directory: ~/app1
+    
+    working_directory: /tmp/app1
     steps:
-    - run:
-          name: Install dependencies
-          working_directory: ~/app1
-          command: |
-            apt-get -y -qq update
-            apt-get -y -qq install python3.4-dev
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python3.4 get-pip.py --user
-            pip install awscli --upgrade --user
-
-
- 
     - run:
           name: Deploy to S3 if tests pass and branch is Master
           command: |
@@ -24,7 +11,7 @@ deploy:
             curl -O https://bootstrap.pypa.io/get-pip.py
             python3.4 get-pip.py --user
             pip install awscli --upgrade --user
-            aws s3 sync ~/app1 s3://meply --delete
+            aws s3 sync ~/app1 s3://staging-area1  --delete
     
 
 workflows:
