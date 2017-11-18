@@ -13,6 +13,6 @@ jobs:
           name: Deploy to S3 if tests pass and branch is Master
           command: |
             curl -O https://bootstrap.pypa.io/get-pip.py
-            python get-pip.py --user
-            pip install awscli --upgrade --user
+            python get-pip.py 
+            pip install awscli --upgrade 
             aws s3 sync ~/app1/build s3://staging-area1  --delete  
