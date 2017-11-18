@@ -4,7 +4,7 @@ working_directory: ~/app1
 jobs:
   build-job:
     docker:
-    image: circleci/node:6
+      - image: circleci/node:6
     steps:
        - checkout
        - run: npm install 
@@ -12,7 +12,7 @@ jobs:
        
   deploy-job:
     docker:
-    image: circleci/node:6
+      - image: circleci/node:6
     steps:
        - checkout
        - run: npm install 
