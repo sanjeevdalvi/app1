@@ -4,6 +4,7 @@ jobs:
    build:
      docker:
        - image: circleci/node:6
+    working_directory: ~/app1    
      steps:
        - checkout
        - run: npm run build
