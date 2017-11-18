@@ -12,9 +12,7 @@ jobs:
   deploy-job:
    docker:
     image: circleci/node:6
-    steps:
-     - checkout
-     - run:
+    - run:
           name: Deploy to S3 if tests pass and branch is Master
           command: |
             sudo apt-get -y -qq install awscli
