@@ -13,5 +13,7 @@ jobs:
        - run:
           name: Deploy to S3 if tests pass and branch is Master
           command: |
-            sudo apt-get -y -qq install awscli 
+            curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+            unzip awscli-bundle.zip
+            sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
             aws s3 sync build s3://staging-area-1  --delete  
